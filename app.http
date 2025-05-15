@@ -10,62 +10,62 @@ PUT http://localhost:3001/users
 Content-Type: application/json
 
 {
-  "id": 1001,
-  "name": "Test User",
-  "username": "testuser",
-  "email": "test@example.com",
+  "id": 1002,
+  "name": "Jane Doe",
+  "username": "janedoe",
+  "email": "jane@example.com",
   "address": {
-    "street": "Test St",
-    "suite": "Apt. 123",
-    "city": "Testville",
-    "zipcode": "12345",
+    "street": "Main Ave",
+    "suite": "Suite 200",
+    "city": "Sampletown",
+    "zipcode": "54321",
     "geo": {
-      "lat": "0.0000",
-      "lng": "0.0000"
+      "lat": "12.3456",
+      "lng": "78.9012"
     }
   },
-  "phone": "123-456-7890",
-  "website": "test.com",
+  "phone": "987-654-3210",
+  "website": "janesite.com",
   "company": {
-    "name": "Test Co",
-    "catchPhrase": "Testing stuff",
-    "bs": "test bs"
+    "name": "Jane Enterprises",
+    "catchPhrase": "Simplifying solutions",
+    "bs": "optimize scalable platforms"
   },
   "posts": [
     {
-      "id": 9001,
-      "userId": 1001,
-      "title": "Test Post 1",
-      "body": "This is the first test post body.",
+      "id": 9010,
+      "userId": 1002,
+      "title": "Welcome to My Blog",
+      "body": "This is my first blog post. Excited to start this journey!",
       "comments": [
         {
-          "id": 8001,
-          "postId": 9001,
-          "name": "Commenter One",
-          "email": "comment1@test.com",
-          "body": "Nice post!"
+          "id": 8010,
+          "postId": 9010,
+          "name": "First Fan",
+          "email": "fan1@example.com",
+          "body": "So happy you're blogging!"
         },
         {
-          "id": 8002,
-          "postId": 9001,
-          "name": "Commenter Two",
-          "email": "comment2@test.com",
-          "body": "Thanks for sharing."
+          "id": 8011,
+          "postId": 9010,
+          "name": "Supporter",
+          "email": "support@example.com",
+          "body": "Keep writing!"
         }
       ]
     },
     {
-      "id": 9002,
-      "userId": 1001,
-      "title": "Test Post 2",
-      "body": "This is the second test post body.",
+      "id": 9011,
+      "userId": 1002,
+      "title": "Tips for Remote Work",
+      "body": "Working remotely has changed how we work. Here are some tips.",
       "comments": [
         {
-          "id": 8003,
-          "postId": 9002,
-          "name": "Commenter Three",
-          "email": "comment3@test.com",
-          "body": "Interesting read."
+          "id": 8012,
+          "postId": 9011,
+          "name": "Remote Pro",
+          "email": "remotepro@example.com",
+          "body": "Great tips! Totally agree."
         }
       ]
     }

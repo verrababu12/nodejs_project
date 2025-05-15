@@ -46,13 +46,28 @@ router.get("/users/:userId", async (req, res) => {
 router.put("/users", async (req, res) => {
   try {
     const newUser = req.body;
+
     const exists = await User.findOne({ id: newUser.id });
     if (exists) return res.status(409).json({ error: "User already exists" });
 
-    await User.create(newUser);
+    const { posts, ...userData } = newUser;
+
+    await User.create(userData);
+
+    for (const post of posts || []) {
+      const { comments, ...postData } = post;
+
+      await Post.create(postData);
+
+      for (const comment of comments || []) {
+        await Comment.create(comment);
+      }
+    }
+
     res.setHeader("Link", `/users/${newUser.id}`);
-    res.status(201).json({ message: "User created" });
+    res.status(201).json({ message: "User, posts, and comments created" });
   } catch (err) {
+    console.error(err);
     res.status(400).json({ error: "Invalid user data" });
   }
 });
